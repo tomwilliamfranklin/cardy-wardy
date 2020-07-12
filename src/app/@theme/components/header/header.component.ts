@@ -98,6 +98,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   getCards() {
-    this.apiService.getFlashCards().subscribe(result => console.log(result));
+    // this.apiService.getFlashCards().subscribe(result => console.log(result));
   }
 }

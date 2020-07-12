@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { FlashCardSet } from '../model/flashcards/flashcard-set';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +10,7 @@ export class CardyWardyApiService {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Access-Control-Allow-Headers': '*',
-  }
+  };
 
   requestOptions: {
     responseType: 'json',
