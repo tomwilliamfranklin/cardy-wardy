@@ -10,9 +10,9 @@ const routes: Routes = [{
   children: [ {
     path: 'grid',
     component: GridComponent,
-  },],
+    },
+  ],
 }];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

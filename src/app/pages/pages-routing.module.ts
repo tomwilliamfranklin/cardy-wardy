@@ -9,10 +9,10 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'ui-features',
-      loadChildren: () => import('./ui-features/ui-features.module')
-        .then(m => m.UiFeaturesModule),
-    },    
+      path: 'browse',
+      loadChildren: () => import('./browse/browse.module')
+        .then(m => m.BrowseModule),
+    },
     {
       path: 'home',
       loadChildren: () => import('./home/home.module')
@@ -20,7 +20,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'home',
+      redirectTo: 'browse',
       pathMatch: 'full',
     },
     {

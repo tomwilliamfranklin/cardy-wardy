@@ -7,6 +7,25 @@
   justify-content: space-between;
   width: 100%;
 
+  .search-container {
+    width:100%;
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+  .search-bar {
+    transition: .6s;
+    height: 100%;
+    float: right;
+  }
+
+  .search-bar-visible {
+    width: 0px;
+    padding:0;
+    border:0;
+    margin-left:100%;
+  }
+
   .logo-container {
     display: flex;
     align-items: center;
