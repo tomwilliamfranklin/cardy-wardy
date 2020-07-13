@@ -6,6 +6,7 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { CardyWardyApiService } from '../../../../services/cardy-wardy-api.component'
+import { FlashCardSet } from '../../../../model/flashcards/flashcard-set';
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
@@ -91,13 +92,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
-  }
-
-  toggleSearchBar() {
-
-  }
-
-  getCards() {
-    // this.apiService.getFlashCards().subscribe(result => console.log(result));
   }
 }

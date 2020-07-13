@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NbToastrService, NbGlobalPosition } from '@nebular/theme';
+import { FlashCardSet } from '../model/flashcards/flashcard-set';
 
 @Injectable({
   providedIn: 'root',
@@ -14,13 +16,23 @@ export class CardyWardyApiService {
 
   requestOptions: {
     responseType: 'json',
-} = {
+  } = {
     responseType: 'json',
-};
-
-  constructor(private httpClient: HttpClient) {}
+  };
+  constructor(private httpClient: HttpClient,
+    private toastrService: NbToastrService) {}
 
   public getFlashCards() {
-    return this.httpClient.get(`${this.apiURL}flashcards`, this.requestOptions);
+    return new Promise<FlashCardSet[]>((resolve, reject) => {
+        this.httpClient.get<FlashCardSet[]>(`${this.apiURL}flashcards`, this.requestOptions).subscribe(response => {
+            resolve(response);
+        }, error => {
+              this.toastrService.show('Error retrieving the flashcard sets. Please refresh the page and try again.'
+              + ' If this problem persists please wait a few minutes as the servers may have gone offline. ',
+              'Error loading Flashcard sets.',
+              {position: 'top-right' as NbGlobalPosition, status: 'danger', duration: 6000});
+            reject(false);
+        });
+    });
   }
 }

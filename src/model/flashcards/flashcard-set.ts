@@ -1,7 +1,7 @@
 import { FlashCard } from './flashcard';
 
 export class FlashCardSet {
-  name: string;
+  title: string;
   description: string;
   dateCreated: Date;
   dateLastEdited: Date;
