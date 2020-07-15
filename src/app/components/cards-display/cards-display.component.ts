@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CardyWardyApiService } from '../../../services/cardy-wardy-api.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { FlashCard } from '../../../model/flashcards/flashcard';
 
 @Component({
   selector: 'ngx-cards-display',
@@ -10,10 +10,9 @@ import { CardyWardyApiService } from '../../../services/cardy-wardy-api.componen
 
 
 export class CardsDisplayComponent implements OnInit {
-  constructor(
-    private apiService: CardyWardyApiService) {
-  }
+  @Input() public flashcards: FlashCard[];
+
+
   ngOnInit(): void {
-    console.log("hello")
   }
 }

@@ -1,12 +1,15 @@
-
-
-
 <div class="card-row">
   <div class="card-col">
     <nb-card class="custom-card" *ngFor="let flashCardSet of flashCardSets; let i = index">
-      <nb-card-header>{{flashCardSet.title}}</nb-card-header>
-      <nb-card-body><ngx-cards-display></ngx-cards-display></nb-card-body>
-      <nb-card-footer>{{flashCardSet.description}}</nb-card-footer>
+      <nb-card-header>
+        {{flashCardSet.title}}
+      </nb-card-header>
+      <ngx-cards-display [flashcards]="flashCardSet.flashcards"></ngx-cards-display>
+      <nb-card-body>
+      </nb-card-body>
+      <nb-card-footer>
+        {{flashCardSet.description}}
+      </nb-card-footer>
     </nb-card>
   </div>
 </div>
