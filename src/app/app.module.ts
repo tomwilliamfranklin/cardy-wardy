@@ -20,6 +20,7 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { CustomComponentsModule } from './components/custom-components.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import {
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    CustomComponentsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

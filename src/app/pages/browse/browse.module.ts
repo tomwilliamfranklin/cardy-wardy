@@ -5,6 +5,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { BrowseRoutingModule } from './browse-routing.module';
 import { BrowseComponent } from './browse.component';
 import { TypographyComponent } from './typography/typography.component';
+import { CustomComponentsModule } from '../../components/custom-components.module';
 
 const components = [
   BrowseComponent,
@@ -20,6 +21,7 @@ const components = [
     NbAlertModule,
     ThemeModule,
     BrowseRoutingModule,
+    CustomComponentsModule,
   ],
   declarations: [
     ...components,

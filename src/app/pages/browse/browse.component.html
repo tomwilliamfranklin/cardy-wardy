@@ -1,12 +1,13 @@
-<div class="row">
-  <div class="col-md-6 col-xxxl-4" *ngFor="let flashCardSet of flashCardSets; let i = index">
-    <nb-card size="large">
-      <nb-card-header>
-        {{flashCardSet.title}}
-      </nb-card-header>
-      <nb-card-body>
-        {{flashCardSet.description}}
-      </nb-card-body>
+
+
+
+<div class="card-row">
+  <div class="card-col">
+    <nb-card class="custom-card" *ngFor="let flashCardSet of flashCardSets; let i = index">
+      <nb-card-header>{{flashCardSet.title}}</nb-card-header>
+      <nb-card-body><ngx-cards-display></ngx-cards-display></nb-card-body>
+      <nb-card-footer>{{flashCardSet.description}}</nb-card-footer>
     </nb-card>
   </div>
 </div>
+

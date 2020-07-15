@@ -5,13 +5,13 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { CardyWardyApiService } from '../../../../services/cardy-wardy-api.component'
-import { FlashCardSet } from '../../../../model/flashcards/flashcard-set';
+
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
+
 export class HeaderComponent implements OnInit, OnDestroy {
   public toggledSearchBar = false;
   private destroy$: Subject<void> = new Subject<void>();
@@ -46,8 +46,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService,
-              private apiService: CardyWardyApiService) {
+              private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
