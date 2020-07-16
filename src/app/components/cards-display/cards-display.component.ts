@@ -40,7 +40,7 @@ export class CardsDisplayComponent implements OnInit {
     this.isShown = false;
     setTimeout(() => {
       this.isShown = true;
-    }, 0);
+    }, 100);
 
     this.currentFlashCard = this.flashcards[this.currentFlashCardIndex];
   }
@@ -50,7 +50,7 @@ export class CardsDisplayComponent implements OnInit {
     this.isShown = false;
     setTimeout(() => {
       this.isShown = true;
-    }, 0);
+    }, 100);
 
     this.currentFlashCard = this.flashcards[this.currentFlashCardIndex];
   }
