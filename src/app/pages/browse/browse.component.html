@@ -8,6 +8,13 @@
       <nb-card-body>
       </nb-card-body>
       <nb-card-footer>
+        <div class="authorbar">
+          <nb-user
+          [name]="'Tom Franklin'"
+          [picture]="">
+          </nb-user>
+          <button class="info-button"><nb-icon icon="info-outline"></nb-icon></button>
+        </div>
         {{flashCardSet.description}}
       </nb-card-footer>
     </nb-card>

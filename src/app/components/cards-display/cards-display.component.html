@@ -3,10 +3,18 @@
     <div class="custom-title">
       &nbsp;
     </div>
-    <div class="card custom-card">
-     <h1> {{flashcards[0].front}} </h1>
+    <div *ngIf="isShown" [ngClass]="['btnStyle']" [@slideInOut] class="card custom-card">
+     <h1> {{currentFlashCard.front}} </h1>
     </div>
+    <div  class="card placeholder-card">
+     </div>
     <div class="custom-card-toolbar">
+      <div class="navigation">
+        <button [disabled]="currentFlashCardIndex === 0" nbButton ghost size="small" (click)="previousCard()"><nb-icon icon="arrow-ios-back-outline"></nb-icon> </button>
+        <label class="label page-count">6 / 7</label>
+        <button [disabled]="currentFlashCardIndex === flashcards.length-1" nbButton ghost size="small" (click)="nextCard()"><nb-icon icon="arrow-ios-forward-outline"></nb-icon> </button>
+      </div>
+     <button class="enlarge" style="float:right" nbButton ghost size="small"><nb-icon icon="expand-outline"></nb-icon> </button>
     </div>
   </div>
 </div>

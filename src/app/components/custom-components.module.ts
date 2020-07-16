@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbAlertModule, NbCardModule, NbIconModule, NbPopoverModule, NbSearchModule } from '@nebular/theme';
+import { NbAlertModule, NbCardModule, NbIconModule, NbPopoverModule, NbSearchModule, NbButtonModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { CardsDisplayComponent } from './cards-display/cards-display.component';
@@ -15,6 +15,7 @@ import { CardsDisplayComponent } from './cards-display/cards-display.component';
     NbIconModule,
     NbAlertModule,
     ThemeModule,
+    NbButtonModule,
   ],
   declarations: [
     CardsDisplayComponent,

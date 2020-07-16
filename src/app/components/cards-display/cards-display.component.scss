@@ -5,6 +5,7 @@
   display:flex;
   justify-content: center;
   margin:auto;
+  position: absolute;
   h1 {
     color: #636e72;
     margin-top: 0;
@@ -14,9 +15,17 @@
   }
 }
 
+.placeholder-card {
+  height:215px;
+  width:280px;
+  background-color: unset;
+  border: unset;
+}
+
 .card-container {
   position: absolute;
   top: 0;
+  height: 275px;
 }
 
 .card-container-container {
@@ -26,4 +35,30 @@
 
 .custom-title {
   margin: 20px;
+}
+
+.custom-card-toolbar {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: -35px;
+  .navigation {
+    width:100%;
+    display:flex;
+    justify-content: center;
+    margin-left:36px;
+    .page-count {
+      margin:10px;
+      font-size:13px;
+    }
+  }
+
+  .enlarge {
+    margin-left: 0;
+  }
+}
+
+
+.appearance-ghost.status-basic[disabled] {
+  background-color: unset !important;
 }

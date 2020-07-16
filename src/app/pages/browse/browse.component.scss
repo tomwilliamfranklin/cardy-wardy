@@ -41,3 +41,29 @@
     min-height: 150px;
   }
 }
+
+.authorbar {
+  margin: 10px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right:0;
+  display:flex;
+  button {
+    margin-left: auto;
+    height: 0;
+    margin-top: 8px;
+    margin-bottom: auto;
+  }
+}
+
+.info-button {
+  background-color: unset;
+  border: unset;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.info-button:hover {
+  opacity:1;
+  transition: 0.2s;
+}
