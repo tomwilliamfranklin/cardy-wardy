@@ -40,6 +40,13 @@
   nb-card-body {
     min-height: 150px;
   }
+  transition: 0.2s;
+}
+
+.custom-card:hover {
+  cursor: zoom-in;
+  transform: scale(1.01);
+  transition: 0.1s;
 }
 
 .authorbar {

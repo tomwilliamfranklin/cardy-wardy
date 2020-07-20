@@ -1,21 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FlashCard } from '../../../model/flashcards/flashcard';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
   selector: 'ngx-cards-display',
   animations: [
-    trigger('slideInOut', [
-      transition(':enter', [
-        style({ opacity: '0',
-        transform: 'translateX(100%) rotate(16deg)' }),
-        animate('.1s', style({ })),
-      ]),
-      transition(':leave', [
-        style({ }),
-        animate('.1s', style({ opacity: '0',
-        transform: 'translateX(-16%) rotate(-10deg)'})),
-      ]),
+    trigger('test', [
+        state('left', style({transform: 'translateX(-100%) rotate(-45deg)', opacity: 0})),
+        state('right', style({ transform: 'translateX(100%) rotate(45deg)', opacity: 0 })),
+        transition('* => left', [
+          animate('0.7s'),
+        ]),
+        transition('* => right', [
+          animate('0.7s'),
+        ]),
     ]),
   ],
   styleUrls: ['./cards-display.component.scss'],
@@ -29,7 +27,7 @@ export class CardsDisplayComponent implements OnInit {
   public currentFlashCard: FlashCard;
   public currentFlashCardIndex: number = 0;
   public bntStyle: string = 'btn-default';
-  public isShown: boolean = true;
+  public isShown: string = 'default';
 
   ngOnInit(): void {
       this.currentFlashCard = this.flashcards[this.currentFlashCardIndex];
@@ -37,9 +35,9 @@ export class CardsDisplayComponent implements OnInit {
 
   nextCard(): void {
     this.currentFlashCardIndex++;
-    this.isShown = false;
+    this.isShown = 'right';
     setTimeout(() => {
-      this.isShown = true;
+      this.isShown = 'default';
     }, 100);
 
     this.currentFlashCard = this.flashcards[this.currentFlashCardIndex];
@@ -47,9 +45,9 @@ export class CardsDisplayComponent implements OnInit {
 
   previousCard(): void {
     this.currentFlashCardIndex--;
-    this.isShown = false;
+    this.isShown = 'left';
     setTimeout(() => {
-      this.isShown = true;
+      this.isShown = 'default';
     }, 100);
 
     this.currentFlashCard = this.flashcards[this.currentFlashCardIndex];
