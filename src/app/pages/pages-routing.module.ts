@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,6 +18,10 @@ const routes: Routes = [{
       path: 'home',
       loadChildren: () => import('./home/home.module')
         .then(m => m.HomeModule),
+    },
+    {
+      path: 'create',
+      component: CreateComponent,
     },
     {
       path: '',

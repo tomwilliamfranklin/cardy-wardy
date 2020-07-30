@@ -9,7 +9,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Create',
     icon: 'keypad-outline',
-    link: '/pages/browse',
+    link: '/pages/create',
   },
   {
     title: 'Browse',
