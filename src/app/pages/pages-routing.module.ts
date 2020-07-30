@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { CreateComponent } from './create/create.component';
+import { BrowseComponent } from './browse/browse.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,13 +12,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'browse',
-      loadChildren: () => import('./browse/browse.module')
-        .then(m => m.BrowseModule),
-    },
-    {
-      path: 'home',
-      loadChildren: () => import('./home/home.module')
-        .then(m => m.HomeModule),
+      component: BrowseComponent,
     },
     {
       path: 'create',
