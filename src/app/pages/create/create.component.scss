@@ -29,6 +29,7 @@
   justify-content: center;
   border-radius: 0.25rem;
   margin-bottom: 40px;
+  animation: expand .25s ease-in-out;
   h1 {
     margin-left: 40px;
     line-height: 100px;
@@ -62,7 +63,68 @@
   }
 }
 
+.add-card-container {
+  height:150px;
+  width:100%;
+  background-color:#F9F9F9;
+  display:flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  position:relative;
+  margin:20px auto;
+  position:relative;
+  h3 {
+    text-align: center;
+    opacity: 0.8;
+    color: #222b45;
+    height: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom:10px;
+    border-bottom:2px solid #222b45;
+    transition: 0.2s;
+  }
+}
+
+.add-card-container::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-top: 3px solid  #e67e22;
+  border-right: 3px solid  #e67e22;
+}
+
+.add-card-container::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  border-bottom: 3px solid #8e44ad;
+  border-left: 3px solid #8e44ad;
+}
+
+.add-card-container:hover {
+  cursor:pointer;
+  h3 {
+    border-bottom:2px solid #e67e22;
+    transition: 0.2s;
+  }
+}
 
 .card-container:last-child {
   margin-bottom: 0px;
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
 }

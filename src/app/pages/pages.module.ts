@@ -8,6 +8,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { CreateComponent } from './create/create.component';
 import { BrowseComponent } from './browse/browse.component';
 import { CustomComponentsModule } from '../components/custom-components.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { CustomComponentsModule } from '../components/custom-components.module';
     NbIconModule,
     NbInputModule,
     NbButtonModule,
+    FormsModule,
   ],
   declarations: [
     PagesComponent,
