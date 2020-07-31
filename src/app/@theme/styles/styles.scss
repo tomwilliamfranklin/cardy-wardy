@@ -31,3 +31,46 @@
 
   @include nb-overrides();
 };
+
+$primary: #e67e22;
+$secondary: #8e44ad;
+
+.underlined-input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: .5pt;
+  border-bottom: 2px solid rgb(48, 53, 69);
+  padding-bottom: 5px;
+  height: 72px;
+  padding-left:0;
+  background-color:transparent;
+  transition: .2s;
+}
+.underlined-input:focus {
+  border-bottom: 2px solid $primary;
+  transition: .2s;
+}
+
+.small-text {
+  font-size: 23px;
+  height:50px;
+}
+
+.under-title {
+  color: #303545;
+  margin: 5px;
+  font-size: 14px;
+  margin-left: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+}
+
+.primary-button {
+  background-color: #8e44ad !important;
+  border: none !important;
+  color: white !important;
+}

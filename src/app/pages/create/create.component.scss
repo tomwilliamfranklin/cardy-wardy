@@ -2,6 +2,67 @@
   width:100%;
   max-width:1000px;
   margin:auto;
+  nb-card-header {
+    padding: 40px;
+    display:flex;
+    flex-direction: column;
+    .creator-title {
+      display:flex;
+      flex-direction:row;
+    }
+  }
+
+  nb-card-body {
+    padding:40px;
+  }
+}
+
+.underlined-input {
+  max-width: 650px;
+}
+
+.card-container {
+  height:150px;
+  width:100%;
+  background-color:#F9F9F9;
+  display:flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  margin-bottom: 40px;
+  h1 {
+    margin-left: 40px;
+    line-height: 100px;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .left-side {
+    margin-left: 40px;
+    margin-right:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+
+    input {
+      padding-top: 0;
+    }
+  }
+
+  .right-side {
+    margin-right: 80px;
+    margin-left: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+    input {
+      padding-top:0;
+    }
+  }
 }
 
 
+.card-container:last-child {
+  margin-bottom: 0px;
+}
