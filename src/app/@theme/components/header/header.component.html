@@ -6,9 +6,10 @@
       <button nbButton (click)="navigateCreate()">CREATE </button>
     </nb-action>
     <nb-action>
-      <button nbButton (click)="navigateTest()">Login </button>
-    </nb-action>
-  </nb-actions>
+      <button nbButton (click)="navigateLogin()">Login </button>
+    </nb-action>    <nb-action>
+      <button nbButton (click)="navigateSignup()">Signup </button>
+    </nb-action>  </nb-actions>
 
   <!-- <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
     <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>

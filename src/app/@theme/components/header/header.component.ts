@@ -7,6 +7,7 @@ import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../../../components/login-dialog-system/login-dialog/login.component';
+import { SignupComponent } from '../../../components/login-dialog-system/signup-dialog/signup.component';
 
 @Component({
   selector: 'ngx-header',
@@ -102,7 +103,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  navigateTest() {
+  navigateSignup() {
+    this.dialogService.open(SignupComponent, {
+    });
+  }
+
+  navigateLogin() {
     this.dialogService.open(LoginComponent, {
     });
   }

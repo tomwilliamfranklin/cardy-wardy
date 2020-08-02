@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CardyWardyApiService } from '../../../../services/cardy-wardy-api.component';
 
 @Component({
-  selector: 'ngx-login-dialog',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'ngx-signup-dialog',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   constructor(
     private apiService: CardyWardyApiService) {
   }
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  Login(): void {
+  Signup(): void {
     this.apiService.postLogin(this.username, this.password);
   }
 }
