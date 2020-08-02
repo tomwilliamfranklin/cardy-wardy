@@ -73,6 +73,7 @@
   position:relative;
   margin:20px auto;
   position:relative;
+  transition: 0.2s;
   h3 {
     text-align: center;
     opacity: 0.8;
@@ -112,6 +113,8 @@
 
 .add-card-container:hover {
   cursor:pointer;
+  transform:scale(1.01);
+  transition: 0.2s;
   h3 {
     border-bottom:2px solid #e67e22;
     transition: 0.2s;

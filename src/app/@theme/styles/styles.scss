@@ -73,4 +73,15 @@ $secondary: #8e44ad;
   background-color: #8e44ad !important;
   border: none !important;
   color: white !important;
+  transition: 0.2s;
+}
+
+.primary-button:hover {
+  opacity:0.8;
+  transition: 0.2s;
+}
+
+.input-container {
+  display:flex;
+  flex-direction: column;
 }

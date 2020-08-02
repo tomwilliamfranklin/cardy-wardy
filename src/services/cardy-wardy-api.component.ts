@@ -37,14 +37,12 @@ export class CardyWardyApiService {
   }
 
   public postDeck(deck) {
-    console.log(deck)
-
     return new Promise<FlashCardSet>((resolve, reject) => {
       this.httpClient.post<FlashCardSet>(`${this.apiURL}flashcards/deck`, deck, this.requestOptions).subscribe(
         response => {
           resolve(response);
       }, error => {
-            this.toastrService.show('Error creating flashcard deck. Something went wrong.',
+            this.toastrService.show('Error creating flashcard deck. Something went wrong.', 'Error creating Flashcard deck.',
             {position: 'top-right' as NbGlobalPosition, status: 'danger', duration: 6000});
           reject(false);
       });
