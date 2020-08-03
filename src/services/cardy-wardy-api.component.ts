@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NbToastrService, NbGlobalPosition } from '@nebular/theme';
 import { FlashCardSet } from '../model/flashcards/flashcard-set';
-import { User } from '../app/@core/data/users';
 
 @Injectable({
   providedIn: 'root',
@@ -51,15 +50,5 @@ export class CardyWardyApiService {
   }
 
   public postLogin(username: String, password: String) {
-    return new Promise<User>((resolve, reject) => {
-      this.httpClient.post<User>(`${this.apiURL}flashcards/deck`, {username, password}, this.requestOptions).subscribe(
-        response => {
-          resolve(response);
-      }, error => {
-            this.toastrService.show('Error creating flashcard deck. Something went wrong.', 'Error creating Flashcard deck.',
-            {position: 'top-right' as NbGlobalPosition, status: 'danger', duration: 6000});
-          reject(false);
-      });
-    });
   }
 }
