@@ -8,26 +8,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
   LayoutService,
   SeoService,
-  StateService,
 } from './utils';
-
-const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
-  },
-];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
   getRole() {
@@ -37,23 +18,6 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 }
 
 export const NB_CORE_PROVIDERS = [
-  ...NbAuthModule.forRoot({
-
-    strategies: [
-      NbDummyAuthStrategy.setup({
-        name: 'email',
-        delay: 3000,
-      }),
-    ],
-    forms: {
-      login: {
-        socialLinks: socialLinks,
-      },
-      register: {
-        socialLinks: socialLinks,
-      },
-    },
-  }).providers,
 
   NbSecurityModule.forRoot({
     accessControl: {
@@ -74,7 +38,6 @@ export const NB_CORE_PROVIDERS = [
   },
   LayoutService,
   SeoService,
-  StateService,
 ];
 
 @NgModule({
