@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashCardSet } from '../../../model/flashcards/flashcard-set';
 import { FlashCard } from '../../../model/flashcards/flashcard';
-import { CardyWardyApiService } from '../../../services/cardy-wardy-api.component';
+import { CardyWardyApiService } from '../../../services/cardy-wardy-api.service';
 
 @Component({
   selector: 'ngx-create',
@@ -25,7 +25,7 @@ export class CreateComponent implements OnInit {
 
   createDeck(): void {
     this.apiService.postDeck(this.FlashCardSet).then(res => {
-      console.log(res)
+      console.log(res);
     });
   }
 }

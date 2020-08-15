@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardyWardyApiService } from '../../../../services/cardy-wardy-api.component';
+import { CardyWardyApiService } from '../../../../services/cardy-wardy-api.service';
 
 @Component({
   selector: 'ngx-signup-dialog',

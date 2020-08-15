@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NbToastrService, NbGlobalPosition } from '@nebular/theme';
 import { FlashCardSet } from '../model/flashcards/flashcard-set';
+import { TestService } from './test';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +22,8 @@ export class CardyWardyApiService {
     responseType: 'json',
   };
   constructor(private httpClient: HttpClient,
-    private toastrService: NbToastrService) {}
+    private toastrService: NbToastrService,
+    private authService: AuthService) {}
 
   public getFlashCards() {
     return new Promise<FlashCardSet[]>((resolve, reject) => {
@@ -49,6 +52,20 @@ export class CardyWardyApiService {
     });
   }
 
-  public postLogin(username: String, password: String) {
+  public postLogin(email: String, password: String) {
+    return new Promise<any>((resolve, reject) => {
+      this.httpClient.post<any>(`${this.apiURL}auth/login`, {email, password}, this.requestOptions).subscribe(
+        response => {
+
+          this.authService.setToken(response.token);
+
+          resolve(response);
+
+      }, error => {
+        console.log(error)
+            this.toastrService.show('Error logging in. Something went wrong.', 'Error logging in.',
+            {position: 'top-right' as NbGlobalPosition, status: 'danger', duration: 6000});
+      });
+    });
   }
 }

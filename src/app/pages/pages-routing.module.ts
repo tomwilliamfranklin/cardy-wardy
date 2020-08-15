@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { CreateComponent } from './create/create.component';
 import { BrowseComponent } from './browse/browse.component';
+import { AuthGuardService as AuthGuard } from '../../services/auth-guard.service';
 
 const routes: Routes = [{
   path: '',
@@ -17,6 +18,7 @@ const routes: Routes = [{
     {
       path: 'create',
       component: CreateComponent,
+      canActivate: [AuthGuard],
     },
     {
       path: '',

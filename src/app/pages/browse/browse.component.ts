@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardyWardyApiService } from '../../../services/cardy-wardy-api.component';
 import { FlashCardSet } from '../../../model/flashcards/flashcard-set';
+import { CardyWardyApiService } from '../../../services/cardy-wardy-api.service';
 
 @Component({
   selector: 'ngx-browse',

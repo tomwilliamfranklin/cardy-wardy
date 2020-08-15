@@ -21,6 +21,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { CustomComponentsModule } from './components/custom-components.module';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +42,12 @@ import { CustomComponentsModule } from './components/custom-components.module';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        allowedDomains: ["example.com"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   ],
   bootstrap: [AppComponent],
 })
